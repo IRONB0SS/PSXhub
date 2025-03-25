@@ -1,6 +1,8 @@
 # PSXhub
 
 This app is enhanced version of PSX Download Helper with more features and fixed bugs.
+![psxhub](https://github.com/user-attachments/assets/d87898d0-2e10-403d-b159-d562ffcfef14)
+
 
 features :
 
