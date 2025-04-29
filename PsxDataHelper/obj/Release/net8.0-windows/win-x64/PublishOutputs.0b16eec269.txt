@@ -1,0 +1,6 @@
+C:\Users\Majid EsT\Desktop\New folder\PSXhub.pdb
+C:\Users\Majid EsT\Desktop\New folder\PSXhub.dll.config
+C:\Users\Majid EsT\Desktop\New folder\e_sqlite3.dll
+C:\Users\Majid EsT\Desktop\New folder\PsxDataHelper.Application.pdb
+C:\Users\Majid EsT\Desktop\New folder\ICS.Manager.pdb
+C:\Users\Majid EsT\Desktop\New folder\PSXhub.exe
