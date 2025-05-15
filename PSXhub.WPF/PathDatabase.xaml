@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="PSXhub.WPF.PathDatabase"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:pu="https://opensource.panuon.com/wpf-ui"
+             mc:Ignorable="d"
+             FontFamily="{Binding Font, Mode=TwoWay}">
+    <Grid>
+        <ToggleButton
+            Background="Transparent"
+            Foreground="#c9d1d9"
+            Margin="6,3"
+            Padding="10"
+            Cursor="Hand" Name="tPath"
+            pu:ToggleButtonHelper.CornerRadius="3"
+            FontWeight="Bold"
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Left"
+            pu:ToggleButtonHelper.HoverBackground="#222931"
+            pu:ToggleButtonHelper.CheckedBackground="#222931">
+            <TextBlock Name="path"
+                       TextTrimming="CharacterEllipsis"
+                       FontWeight="Medium"></TextBlock>
+        </ToggleButton>
+    </Grid>
+</UserControl>

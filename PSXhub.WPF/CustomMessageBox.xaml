@@ -1,0 +1,103 @@
+﻿<Window x:Class="PSXhub.WPF.CustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pu="https://opensource.panuon.com/wpf-ui"
+        xmlns:local="clr-namespace:PSXhub"
+        mc:Ignorable="d"
+        Loaded="CustomMessageBox_OnLoaded"
+        Background="Transparent"
+        Foreground="White"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Title="MessageBox"
+        BorderThickness="0"
+        FontFamily="{Binding Font, Mode=TwoWay}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0"
+                      NonClientFrameEdges="None"
+                      CaptionHeight="0"
+                      CornerRadius="0"
+                      ResizeBorderThickness="0"/>
+    </WindowChrome.WindowChrome>
+
+    <Border BorderBrush="#3d444d"
+            BorderThickness="2"
+            CornerRadius="12"
+            Background="#151b23">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" BorderBrush="#3d444d"
+                    BorderThickness="0,0,0,0.5"
+                    Name="TitleBar"
+                    MouseDown="TitleBar_OnMouseDown">
+                <Grid Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal"
+                                Margin="10,12" VerticalAlignment="Center">
+                        <TextBlock
+                            FontSize="16" Foreground="#F0F6FC"
+                            FontWeight="SemiBold" Name="CTitle"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center"
+                                Orientation="Horizontal"
+                                Margin="0,12,10,12">
+                        <Button Foreground="White" Background="Transparent"
+                                Width="25" Height="25" FontSize="24" Name="Close"
+                                VerticalAlignment="Center" Click="Close_OnClick" Cursor="Hand"
+                                Padding="0"
+                                pu:ButtonHelper.HoverBackground="#212830"
+                                pu:ButtonHelper.CornerRadius="4">
+                            <Viewbox Width="10" Height="10"
+                                     Margin="0,0,0,0">
+                                <Path Fill="#9198A1"
+                                      Data="M33.4863 0.978568C33.0902 0.987923 32.7138 1.15363 32.4395 1.43951L18 15.879L3.56055 1.43951C3.42073 1.29552 3.25344 1.18105 3.06859 1.10288C2.88374 1.02472 2.68508 0.984435 2.48438 0.984427C2.18585 0.9845 1.89414 1.07364 1.64656 1.24043C1.39898 1.40722 1.2068 1.64409 1.09459 1.92072C0.982388 2.19735 0.955268 2.50117 1.0167 2.7933C1.07814 3.08543 1.22533 3.35259 1.43945 3.5606L15.8789 18.0001L1.43945 32.4395C1.2955 32.5777 1.18057 32.7433 1.10139 32.9265C1.02222 33.1097 0.980389 33.3068 0.97836 33.5064C0.976331 33.7059 1.01414 33.9039 1.08957 34.0886C1.16501 34.2734 1.27655 34.4413 1.41767 34.5824C1.55878 34.7235 1.72664 34.835 1.9114 34.9105C2.09617 34.9859 2.29413 35.0237 2.49368 35.0217C2.69324 35.0197 2.89039 34.9778 3.07358 34.8987C3.25678 34.8195 3.42233 34.7046 3.56055 34.5606L18 20.1211L32.4395 34.5606C32.5777 34.7046 32.7432 34.8195 32.9264 34.8987C33.1096 34.9778 33.3068 35.0197 33.5063 35.0217C33.7059 35.0237 33.9038 34.9859 34.0886 34.9105C34.2734 34.835 34.4412 34.7235 34.5823 34.5824C34.7234 34.4413 34.835 34.2734 34.9104 34.0886C34.9859 33.9039 35.0237 33.7059 35.0216 33.5064C35.0196 33.3068 34.9778 33.1097 34.8986 32.9265C34.8194 32.7433 34.7045 32.5777 34.5605 32.4395L20.1211 18.0001L34.5605 3.5606C34.7787 3.35124 34.9285 3.08086 34.9902 2.7849C35.052 2.48894 35.023 2.18121 34.9068 1.90206C34.7907 1.62291 34.5929 1.38537 34.3394 1.22058C34.0859 1.05578 33.7886 0.971427 33.4863 0.978568Z">
+                                    <Path.RenderTransform>
+                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Viewbox>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <WrapPanel Grid.Row="1" VerticalAlignment="Center" Name="Message"
+                       Margin="20,10,20,5"></WrapPanel>
+
+            <Border Grid.Row="2" Padding="10,10"
+                    BorderThickness="0,0.5,0,0"
+                    BorderBrush="#3d444d">
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+                    <Button
+                        Margin="0,8"
+                        Content="OK"
+                        Width="95"
+                        Padding="10,5"
+                        Background="#222931"
+                        Foreground="#FFFFFF"
+                        FontSize="14"
+                        Cursor="Hand"
+                        BorderThickness="1"
+                        BorderBrush="#3d444d"
+                        pu:ButtonHelper.CornerRadius="5"
+                        pu:ButtonHelper.HoverBackground="#252c34"
+                        Name="Ok" Click="Ok_Click"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
+

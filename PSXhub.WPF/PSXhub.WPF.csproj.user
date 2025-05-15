@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>D:\PSXhub\PsxDataHelper\PsxDataHelper\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AboutPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddToDatabase.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CompareFilesInfoPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ComparePath.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CreditsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomMessageBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DatabaseGuidePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DonateBitcoinPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DonatePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DonateTetherPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FolderQuestion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LogBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Main.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NetworkSharing.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PathDatabase.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SelectFilesInfoPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Settings.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AboutPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddToDatabase.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CompareFilesInfoPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ComparePath.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CreditsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomMessageBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DatabaseGuidePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DonateBitcoinPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DonatePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DonateTetherPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FolderQuestion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LogBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Main.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NetworkSharing.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PathDatabase.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SelectFilesInfoPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Settings.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

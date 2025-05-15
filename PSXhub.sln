@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXhub.Application", "PSXhub.Application\PSXhub.Application.csproj", "{F279CE7A-3A4C-4621-A6FE-1755FFC7FA06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXhub.WPF", "PSXhub.WPF\PSXhub.WPF.csproj", "{378752F5-8A40-4FBA-9487-C8E23D761BE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F279CE7A-3A4C-4621-A6FE-1755FFC7FA06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F279CE7A-3A4C-4621-A6FE-1755FFC7FA06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F279CE7A-3A4C-4621-A6FE-1755FFC7FA06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F279CE7A-3A4C-4621-A6FE-1755FFC7FA06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{378752F5-8A40-4FBA-9487-C8E23D761BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{378752F5-8A40-4FBA-9487-C8E23D761BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{378752F5-8A40-4FBA-9487-C8E23D761BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{378752F5-8A40-4FBA-9487-C8E23D761BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

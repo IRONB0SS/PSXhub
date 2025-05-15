@@ -1,0 +1,17 @@
+D:\PSXhub\Git\PSXhub\PSXhub.Application\bin\Debug\net8.0\PSXhub.Application.deps.json
+D:\PSXhub\Git\PSXhub\PSXhub.Application\bin\Debug\net8.0\PSXhub.Application.runtimeconfig.json
+D:\PSXhub\Git\PSXhub\PSXhub.Application\bin\Debug\net8.0\PSXhub.Application.dll
+D:\PSXhub\Git\PSXhub\PSXhub.Application\bin\Debug\net8.0\PSXhub.Application.pdb
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.csproj.AssemblyReference.cache
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\Interop.NETCONLib.dll
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.csproj.ResolveComReference.cache
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.AssemblyInfoInputs.cache
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.AssemblyInfo.cs
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.csproj.CoreCompileInputs.cache
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.sourcelink.json
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.dll
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\refint\PSXhub.Application.dll
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.pdb
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\PSXhub.Application.genruntimeconfig.cache
+D:\PSXhub\Git\PSXhub\PSXhub.Application\obj\Debug\net8.0\ref\PSXhub.Application.dll

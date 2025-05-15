@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PSXhub.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BlinkMacSystemFont" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pack://application:,,,/Fonts/#BlinkMacSystemFont</Value>
+    </Setting>
+    <Setting Name="Vazir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pack://application:,,,/Fonts/#Vazir</Value>
+    </Setting>
+    <Setting Name="Lalezar" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pack://application:,,,/Fonts/#Lalezar</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

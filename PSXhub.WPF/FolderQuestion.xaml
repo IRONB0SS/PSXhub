@@ -1,0 +1,128 @@
+﻿<Window x:Class="PSXhub.WPF.FolderQuestion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pu="https://opensource.panuon.com/wpf-ui"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Height="450" Width="600"
+        Background="#151b23"
+        Foreground="White"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="NoResize"
+        BorderBrush="#1e4273"
+        BorderThickness="2"
+        FontFamily="{Binding Font, Mode=TwoWay}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CaptionHeight="0" CornerRadius="4"/>
+    </WindowChrome.WindowChrome>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#121d2f">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal"
+                        Margin="10,20">
+                <TextBlock
+                    FontWeight="Bold" FontSize="14">
+                    Choose Browser for AutoFinder
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Background="#0d1017">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderBrush="#1e4273" BorderThickness="1.2"
+                    Margin="20,15,5,15" CornerRadius="4" Name="OldBrowserBorder"
+                    MouseDown="OldBrowserBorder_OnMouseDown">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Background="#121d2f"
+                            CornerRadius="4,4,0,0"
+                            BorderBrush="#1e4273"
+                            BorderThickness="0,0,0,1.2">
+                        <RadioButton Margin="10,10" Name="OldBrowserRadioButton"
+                                     GroupName="browser" Tag="true"
+                                     IsChecked="true" Cursor="Hand"
+                                     Background="#3b3b3b" Foreground="#9198a1"
+                                     BorderBrush="#858585" BorderThickness="1.5"
+                                     pu:RadioButtonHelper.HoverBorderBrush="#acacac"
+                                     pu:RadioButtonHelper.CheckedBorderBrush="#99c8ff"
+                                     pu:RadioButtonHelper.CheckedBackground="#3b3b3b"
+                                     pu:RadioButtonHelper.CheckedToggleBrush="#99c8ff"
+                                     pu:RadioButtonHelper.CheckedForeground="#c9d1d9"
+                                     FontSize="16"
+                                     FontWeight="Medium">Old Browser</RadioButton>
+                    </Border>
+                    <DockPanel Grid.Row="1" Background="#151b23">
+                        <Image Source="Images/OldBrowser.jpg"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Margin="0,10" />
+                    </DockPanel>
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" BorderBrush="#1e4273" BorderThickness="1.2"
+                    Margin="5,15,20,15" CornerRadius="4" Name="ModernBrowserBorder"
+                    MouseDown="ModernBrowserBorder_OnMouseDown">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Background="#121d2f"
+                            CornerRadius="4,4,0,0"
+                            BorderBrush="#1e4273"
+                            BorderThickness="0,0,0,1.2">
+                        <RadioButton Margin="10,10" Name="ModernBrowserRadioButton"
+                                     GroupName="browser" Tag="false"
+                                     IsChecked="false" Cursor="Hand"
+                                     Background="#3b3b3b" Foreground="#9198a1"
+                                     BorderBrush="#858585" BorderThickness="1.5"
+                                     pu:RadioButtonHelper.HoverBorderBrush="#acacac"
+                                     pu:RadioButtonHelper.CheckedBorderBrush="#99c8ff"
+                                     pu:RadioButtonHelper.CheckedBackground="#3b3b3b"
+                                     pu:RadioButtonHelper.CheckedToggleBrush="#99c8ff"
+                                     pu:RadioButtonHelper.CheckedForeground="#c9d1d9"
+                                     FontSize="16"
+                                     FontWeight="Medium">Modern Browser</RadioButton>
+                    </Border>
+                    <DockPanel Grid.Row="1" Background="#151b23">
+                        <Image Source="Images/ModernBrowser.jpg"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Margin="20,0" />
+                    </DockPanel>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Save"
+                        Margin="10"
+                        Padding="10,5"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Background="#238636"
+                        Foreground="#FFFFFF"
+                        ToolTipService.ShowOnDisabled="True"
+                        FontSize="14"
+                        BorderThickness="1"
+                        BorderBrush="#3f9b4f"
+                        Cursor="Hand"
+                        pu:ButtonHelper.HoverBackground="#29903b" Name="Save"
+                        pu:ButtonHelper.CornerRadius="4" Click="Save_OnClick"
+                        FontWeight="Medium"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

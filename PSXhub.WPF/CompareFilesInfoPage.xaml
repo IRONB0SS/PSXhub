@@ -1,0 +1,24 @@
+﻿<Page x:Class="PSXhub.WPF.CompareFilesInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PSXhub"
+      mc:Ignorable="d" 
+      Title="CompareFilesInfoPage">
+
+    <Grid>
+        <TextBlock
+            Foreground="#F5F5F5"
+            Margin="10"
+            TextAlignment="Justify"
+            TextWrapping="Wrap"
+            FontSize="14"
+            LineHeight="23"
+            FontWeight="Medium"
+            Text="{Binding [CompareFilesInfo]}"
+            FlowDirection="{Binding [FlowDirection]}"
+            FontFamily="{Binding Font2, Mode=TwoWay}">
+        </TextBlock>
+    </Grid>
+</Page>

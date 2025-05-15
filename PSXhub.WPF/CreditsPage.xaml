@@ -1,0 +1,26 @@
+﻿<Page x:Class="PSXhub.WPF.CreditsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:PSXhub"
+      mc:Ignorable="d"
+      Title="CreditsPage">
+
+    <Grid>
+        <TextBlock
+            Foreground="#F0F6FC"
+            Margin="10"
+            TextAlignment="Justify"
+            TextWrapping="Wrap"
+            FontSize="14"
+            LineHeight="23"
+            FontWeight="Medium">
+            This project has been forked from PSX Download Helper, so thanks to everyone who contributed to that wonderful app.
+            <LineBreak/>
+            Special thanks to 0x199 for helping us with the online database.
+            <LineBreak/>
+            Special thanks to Majid Esmaeili for his tireless efforts in developing this project.
+        </TextBlock>
+    </Grid>
+</Page>

@@ -1,0 +1,355 @@
+﻿<Window
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"  x:Class="PSXhub.WPF.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="https://opensource.panuon.com/wpf-ui"
+    xmlns:pu="clr-namespace:Panuon.WPF.UI;assembly=Panuon.WPF.UI"
+    mc:Ignorable="d"
+    ResizeMode="CanMinimize"
+    Closing="WindowX_Closing"
+    Closed="WindowX_Closed"
+    Loaded="WindowX_Loaded"
+    WindowStartupLocation="CenterScreen"
+    Title="PSXhub"
+    Height="400" Width="300"
+    Background="#0d1017"
+    Foreground="White"
+    WindowStyle="SingleBorderWindow"
+    FontFamily="{Binding Font, Mode=TwoWay}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CaptionHeight="0" CornerRadius="4" />
+    </WindowChrome.WindowChrome>
+    <Window.BorderBrush>
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="0,1">
+            <GradientStop Offset="0"
+                          Color="#6CBCEA" />
+            <GradientStop Offset="1"
+                          Color="#005869" />
+        </LinearGradientBrush>
+    </Window.BorderBrush>
+    <Window.Resources>
+        <Style x:Key="RingStandardProgressBarStyle"
+               TargetType="pu:RingProgressBar">
+            <Setter Property="Minimum"
+                    Value="0" />
+            <Setter Property="Maximum"
+                    Value="100" />
+            <Setter Property="Width"
+                    Value="140" />
+            <Setter Property="Height"
+                    Value="140" />
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="BorderThickness"
+                    Value="15" />
+            <Setter Property="BorderBrush"
+                    Value="#226CBCEA" />
+            <Setter Property="Foreground"
+                    Value="#6CBCEA" />
+            <Setter Property="IsPercentVisible"
+                    Value="False" />
+            <Setter Property="pu:ShadowHelper.ShadowDepth"
+                    Value="5" />
+            <Setter Property="pu:ShadowHelper.BlurRadius"
+                    Value="15" />
+        </Style>
+
+        <Style x:Key="RingStandardProgressBarStyle2"
+               TargetType="pu:RingProgressBar">
+            <Setter Property="Minimum"
+                    Value="0" />
+            <Setter Property="Maximum"
+                    Value="100" />
+            <Setter Property="Width"
+                    Value="140" />
+            <Setter Property="Height"
+                    Value="140" />
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="BorderBrush"
+                    Value="#18355d" />
+            <Setter Property="pu:ShadowHelper.ShadowDepth"
+                    Value="5" />
+            <Setter Property="pu:ShadowHelper.BlurRadius"
+                    Value="15" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid VerticalAlignment="Center" Background="Transparent" Height="30" Name="TitleBar" MouseDown="TitleBar_MouseDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"></ColumnDefinition>
+                    <ColumnDefinition Width="60*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <DockPanel Grid.Column="1" HorizontalAlignment="Right"
+                           Margin="10,0,0,0" Height="30">
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                        <Button Foreground="White" Background="Transparent"
+                                pu:ButtonHelper.HoverBackground="#cccccc"
+                                Width="50" Height="30" FontSize="24"
+                                VerticalAlignment="Center" Click="Minimize_Click">
+                            <Viewbox Width="13" Height="13"
+                                     Margin="0">
+                                <Path Fill="#9198A1" Data="M16.4176 3.65857H1.47576C0.66557 3.65857 0.00878143 3.00178 0.00878143 2.19159V2.19159C0.00878143 1.3814 0.665571 0.724609 1.47576 0.724609H34.5418C35.352 0.724609 36.0088 1.3814 36.0088 2.19159V2.19159C36.0088 3.00178 35.352 3.65857 34.5418 3.65857H16.4176Z">
+                                    <Path.RenderTransform>
+                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Viewbox>
+                        </Button>
+                        <Button Foreground="White" Background="Transparent"
+                                pu:ButtonHelper.HoverBackground="#cccccc"
+                                Width="50" Height="30" FontSize="24"
+                                VerticalAlignment="Center" Click="Maximize_Click" IsEnabled="False">
+                            <Viewbox Width="13" Height="13"
+                                     Margin="0">
+                                <Path Fill="#9198A1" Data="M5.5 0C2.48182 0 0 2.48182 0 5.5V30.5C0 33.5182 2.48182 36 5.5 36H30.5C33.5182 36 36 33.5182 36 30.5V5.5C36 2.48182 33.5182 0 30.5 0H5.5ZM5.5 3H30.5C31.8818 3 33 4.11818 33 5.5V30.5C33 31.8818 31.8818 33 30.5 33H5.5C4.11818 33 3 31.8818 3 30.5V5.5C3 4.11818 4.11818 3 5.5 3Z">
+                                    <Path.RenderTransform>
+                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Viewbox>
+                        </Button>
+                        <Button Foreground="White" Background="Transparent"
+                                pu:ButtonHelper.HoverBackground="#d64343"
+                                Width="50" Height="30" FontSize="24"
+                                VerticalAlignment="Center" Click="Close_Click">
+                            <Viewbox Width="13" Height="13"
+                                     Margin="0">
+                                <Path Fill="#9198A1" Data="M33.4863 0.978568C33.0902 0.987923 32.7138 1.15363 32.4395 1.43951L18 15.879L3.56055 1.43951C3.42073 1.29552 3.25344 1.18105 3.06859 1.10288C2.88374 1.02472 2.68508 0.984435 2.48438 0.984427C2.18585 0.9845 1.89414 1.07364 1.64656 1.24043C1.39898 1.40722 1.2068 1.64409 1.09459 1.92072C0.982388 2.19735 0.955268 2.50117 1.0167 2.7933C1.07814 3.08543 1.22533 3.35259 1.43945 3.5606L15.8789 18.0001L1.43945 32.4395C1.2955 32.5777 1.18057 32.7433 1.10139 32.9265C1.02222 33.1097 0.980389 33.3068 0.97836 33.5064C0.976331 33.7059 1.01414 33.9039 1.08957 34.0886C1.16501 34.2734 1.27655 34.4413 1.41767 34.5824C1.55878 34.7235 1.72664 34.835 1.9114 34.9105C2.09617 34.9859 2.29413 35.0237 2.49368 35.0217C2.69324 35.0197 2.89039 34.9778 3.07358 34.8987C3.25678 34.8195 3.42233 34.7046 3.56055 34.5606L18 20.1211L32.4395 34.5606C32.5777 34.7046 32.7432 34.8195 32.9264 34.8987C33.1096 34.9778 33.3068 35.0197 33.5063 35.0217C33.7059 35.0237 33.9038 34.9859 34.0886 34.9105C34.2734 34.835 34.4412 34.7235 34.5823 34.5824C34.7234 34.4413 34.835 34.2734 34.9104 34.0886C34.9859 33.9039 35.0237 33.7059 35.0216 33.5064C35.0196 33.3068 34.9778 33.1097 34.8986 32.9265C34.8194 32.7433 34.7045 32.5777 34.5605 32.4395L20.1211 18.0001L34.5605 3.5606C34.7787 3.35124 34.9285 3.08086 34.9902 2.7849C35.052 2.48894 35.023 2.18121 34.9068 1.90206C34.7907 1.62291 34.5929 1.38537 34.3394 1.22058C34.0859 1.05578 33.7886 0.971427 33.4863 0.978568Z">
+                                    <Path.RenderTransform>
+                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Viewbox>
+                        </Button>
+                    </StackPanel>
+                </DockPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="0">
+                    <TextBlock FontSize="12" Foreground="#ffffff" Margin="10,0,0,0"
+                               VerticalAlignment="Center">
+                        PSXhub
+                    </TextBlock>
+                    <TextBlock FontSize="7" Foreground="#f2f2f2" Margin="3,3,0,0"
+                               VerticalAlignment="Center">
+                        0.5.7-alpha
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#0D1017" Offset="0"/>
+                        <GradientStop Color="#131722" Offset="0.6"/>
+                        <GradientStop Color="#0A0E14" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="5" />
+                </Grid.RowDefinitions>
+                <Grid x:Name="gdConsole"
+                      Grid.RowSpan="2"
+                      Panel.ZIndex="999"
+                      Visibility="Hidden"
+                      Background="#C000"
+                      Margin="8,0,8,8">
+                    <Border BorderThickness="1"
+                            BorderBrush="DarkGray">
+                        <Grid>
+                            <TextBox x:Name="tbConsole"
+                                     TextWrapping="Wrap"
+                                     VerticalScrollBarVisibility="Auto"
+                                     HorizontalScrollBarVisibility="Disabled"
+                                     VerticalAlignment="Top"
+                                     HorizontalAlignment="Left"
+                                     IsReadOnly="True"
+                                     AcceptsReturn="True"
+                                     BorderThickness="0"
+                                     FontSize="13"
+                                     Background="Transparent"
+                                     Foreground="Lime"
+                                     Margin="12" />
+                        </Grid>
+                    </Border>
+                </Grid>
+                <StackPanel Orientation="Vertical">
+                    <Grid Height="230"
+                          Margin="0,40,0,0">
+                        <Button Height="130"
+                                x:Name="btnStart"
+                                Focusable="False"
+                                Width="130"
+                                Content="START"
+                                Background="#121d2f"
+                                Foreground="#3291fb"
+                                FontSize="24"
+                                FontWeight="Bold"
+                                MouseEnter="StartButton_MouseEnter"
+                                MouseLeave="StartButton_MouseLeave"
+                                pu:ButtonHelper.ClickBackground="#16243a"
+                                pu:ButtonHelper.HoverBackground="#16243a"
+                                pu:ButtonHelper.CornerRadius="100"
+                                BorderThickness="10"
+                                BorderBrush="#1e4273" Click="btnStart_Click"/>
+                        <pu:RingProgressBar x:Name="pbProgress3"
+                                            AnimationDuration="0:0:0.3"
+                                            AnimationEasing="CubicOut"
+                                            Style="{StaticResource RingStandardProgressBarStyle2}"
+                                            Value="0" />
+                    </Grid>
+                    <WrapPanel Orientation="Horizontal"
+                               HorizontalAlignment="Left"
+                               Margin="0" Width="275">
+
+                        <Button
+                            Width="20"
+                            Padding="0"
+                            Margin="5, 0, 0 0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            pu:ButtonHelper.CornerRadius="0">
+                            <Path Fill="Transparent" Data="M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z"/>
+                        </Button>
+
+                        <ComboBox
+                            Width="140"
+                            Height="30"
+                            Margin="5 , 0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            x:Name="IPs"
+                            SelectionChanged="IpsChange"
+                            Background="#222931"
+                            Foreground="#FFFFFF"
+                            Cursor="Hand"
+                            FontFamily="Segoe UI"
+                            FontWeight="Regular"
+                            FontSize="14"
+                            BorderThickness="1"
+                            BorderBrush="#3d444d"
+                            DropDownOpened="RefreshIps"
+                            pu:ComboBoxHelper.CornerRadius="4"
+                            pu:ComboBoxHelper.ItemsSelectedBackground="#222931"
+                            pu:ComboBoxHelper.ItemsHoverBackground="#252c34"
+                            pu:DropDownHelper.ShadowColor="{x:Null}"/>
+
+                        <TextBox Width="55"
+                                 Height="30"
+                                 Text="8080"
+                                 Margin="1.25, 0,5,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 Name="Port"
+                                 Background="#222931"
+                                 Foreground="#9198a1"
+                                 TextAlignment="Center"
+                                 FontSize="14"
+                                 MaxLength="5"
+                                 BorderThickness="1"
+                                 BorderBrush="#3d444d"
+                                 pu:TextBoxHelper.CornerRadius="4"
+                                 pu:TextBoxHelper.FocusedBorderBrush="#1f6feb"
+                                 pu:TextBoxHelper.FocusedBorderThickness="2"
+                                 FontFamily="Segoe UI"
+                                 FontWeight="Regular"/>
+
+                        <WrapPanel Orientation="Horizontal">
+                            <Button Width="30"
+                                    Height="30"
+                                    Margin="1.25, 0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    x:Name="OpenNetworkSharing_btn"
+                                    Background="#222931"
+                                    Foreground="#9198a1"
+                                    FontSize="14"
+                                    BorderThickness="1"
+                                    BorderBrush="#3d444d"
+                                    Cursor="Hand"
+                                    pu:ButtonHelper.HoverBackground="#252c34"
+                                    pu:ButtonHelper.CornerRadius="4"
+                                    Click="OpenNetworkSharing_btn_Click">
+                                <Viewbox Width="16" Height="16">
+                                    <Path Fill="#9198A1" Data="M8.75 8.582v5.668a.75.75 0 0 1-1.5 0V8.582a1.75 1.75 0 1 1 1.5 0Zm3.983-7.125a.75.75 0 0 1 1.06.026A7.976 7.976 0 0 1 16 7c0 2.139-.84 4.083-2.207 5.517a.75.75 0 1 1-1.086-1.034A6.474 6.474 0 0 0 14.5 7a6.474 6.474 0 0 0-1.793-4.483.75.75 0 0 1 .026-1.06Zm-9.466 0c.3.286.312.76.026 1.06A6.474 6.474 0 0 0 1.5 7a6.47 6.47 0 0 0 1.793 4.483.75.75 0 0 1-1.086 1.034A7.973 7.973 0 0 1 0 7c0-2.139.84-4.083 2.207-5.517a.75.75 0 0 1 1.06-.026Zm8.556 2.321A4.988 4.988 0 0 1 13 7a4.988 4.988 0 0 1-1.177 3.222.75.75 0 1 1-1.146-.967A3.487 3.487 0 0 0 11.5 7c0-.86-.309-1.645-.823-2.255a.75.75 0 0 1 1.146-.967Zm-6.492.958A3.48 3.48 0 0 0 4.5 7a3.48 3.48 0 0 0 .823 2.255.75.75 0 0 1-1.146.967A4.981 4.981 0 0 1 3 7a4.982 4.982 0 0 1 1.188-3.236.75.75 0 1 1 1.143.972Z">
+                                        <Path.RenderTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Viewbox>
+                            </Button>
+                            <Button Background="Transparent" Width="12" Height="12" Padding="0"
+                                    Margin="-8,0,0,-26"
+                                    Name="Network_War_Icon"
+                                    MouseEnter="Network_War_Icon_OnMouseEnter"
+                                    MouseLeave="Network_War_Icon_OnMouseLeave">
+                                <StackPanel>
+                                    <Popup x:Name="Network_btn_PopUp" Placement="Left"
+                                           StaysOpen="True">
+                                        <Border Background="#272115"
+                                                BorderBrush="#634711" BorderThickness="2"
+                                                MouseEnter="Network_War_Icon_OnMouseEnter"
+                                                MouseLeave="Network_War_Icon_OnMouseLeave"
+                                                Padding="5,7" CornerRadius="2">
+                                            <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                       Margin="0">
+
+                                                <TextBlock TextAlignment="Center" VerticalAlignment="Center"
+                                                           Foreground="#e1e8ed" FontSize="11">
+                                                    Setup network sharing
+                                                </TextBlock>
+                                                <WrapPanel Orientation="Vertical" VerticalAlignment="Center" Width="10" Margin="3,0,0,0">
+                                                    <Button Width="12" Height="12" Name="HideNetAlert" VerticalAlignment="Center"
+                                                            Background="Transparent" Padding="0" Click="HideNetAlert_Click"
+                                                            Margin="0,2,0,0"
+                                                            Cursor="Hand" Panel.ZIndex="100">
+                                                        <Viewbox Width="12" Height="12"
+                                                                 Margin="-5,-3,0,0">
+                                                            <Path Fill="#D29922" Data="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z">
+                                                                <Path.RenderTransform>
+                                                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                </Path.RenderTransform>
+                                                            </Path>
+                                                        </Viewbox>
+                                                    </Button>
+                                                </WrapPanel>
+                                            </WrapPanel>
+                                        </Border>
+                                    </Popup>
+                                    <Viewbox Width="12" Height="12">
+                                        <Path Fill="#D29922" Data="M4.85498 0.708011C5.35498 -0.187989 6.64498 -0.187989 7.14498 0.708011L11.82 9.05901C11.9321 9.2588 11.9899 9.48446 11.9877 9.71354C11.9855 9.94263 11.9234 10.1671 11.8075 10.3648C11.6916 10.5624 11.526 10.7262 11.3271 10.8399C11.1283 10.9536 10.9031 11.0133 10.674 11.013H1.32998C1.10077 11.0133 0.875485 10.9536 0.676515 10.8398C0.477546 10.726 0.311828 10.5621 0.195841 10.3644C0.0798547 10.1667 0.0176399 9.94213 0.0153835 9.71294C0.0131271 9.48374 0.0709078 9.25795 0.18298 9.05801L4.85498 0.708011ZM6.99998 7.00001V3.00001H4.99998V7.00001H6.99998ZM5.99998 10C6.2652 10 6.51955 9.89465 6.70709 9.70712C6.89462 9.51958 6.99998 9.26523 6.99998 9.00001C6.99998 8.73479 6.89462 8.48044 6.70709 8.2929C6.51955 8.10537 6.2652 8.00001 5.99998 8.00001C5.73476 8.00001 5.48041 8.10537 5.29287 8.2929C5.10534 8.48044 4.99998 8.73479 4.99998 9.00001C4.99998 9.26523 5.10534 9.51958 5.29287 9.70712C5.48041 9.89465 5.73476 10 5.99998 10Z">
+                                            <Path.RenderTransform>
+                                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                            </Path.RenderTransform>
+                                        </Path>
+                                    </Viewbox>
+                                </StackPanel>
+
+                            </Button>
+                        </WrapPanel>
+
+                    </WrapPanel>
+
+                    <Button Background="Transparent" Margin="25,20,25,0" Visibility="Visible"
+                            Width="100" Click="Open_Site" Name="Logo">
+                        <TextBlock TextAlignment="Center"  FontSize="11"
+                                   FontFamily="pack://application:,,,/Fonts/#Lalezar" Foreground="#1f6feb">
+                            بازی بازار
+                        </TextBlock>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

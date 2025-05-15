@@ -1,0 +1,81 @@
+﻿<Page x:Class="PSXhub.WPF.DonateBitcoinPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:pu="clr-namespace:Panuon.WPF.UI;assembly=Panuon.WPF.UI"
+      xmlns:local="clr-namespace:PSXhub"
+      mc:Ignorable="d"
+      Title="DonateBitcoinPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="10">
+            <TextBlock
+                Foreground="#F0F6FC"
+                TextAlignment="Justify"
+                TextWrapping="Wrap"
+                Margin="0"
+                FontSize="14"
+                LineHeight="23"
+                FontWeight="Medium">
+                My Public Address to Receive BTC :
+            </TextBlock>
+            <TextBlock Foreground="#468bd1"
+                       TextWrapping="Wrap"
+                       FontSize="10"
+                       Margin="0,5">
+                bc1qpyr6hyjhnc6hs7jg7zuyt3qx83qacw936jvgqd
+            </TextBlock>
+            <Button VerticalAlignment="Center" Foreground="#e1e8ed"
+                    Padding="0,8" Background="Transparent" Cursor="Hand"
+                    Margin="0,5"
+                    pu:ButtonHelper.HoverBackground="#212830"
+                    pu:ButtonHelper.CornerRadius="4"
+                    Tag="bc1qpyr6hyjhnc6hs7jg7zuyt3qx83qacw936jvgqd"
+                    Name="BTC_Copy"
+                    Click="BTC_Copy_OnClick">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                    <!-- <Popup Name="CopiedPopUp" Placement="Left" -->
+                    <!--        HorizontalOffset="-18" VerticalOffset="-8"> -->
+                    <!--     <Border BorderThickness="0" -->
+                    <!--             Background="#3d444d" CornerRadius="4" -->
+                    <!--             Padding="10,9"> -->
+                    <!--         <TextBlock Foreground="#e1e8ed" FontSize="14"> -->
+                    <!--             Copied! -->
+                    <!--         </TextBlock> -->
+                    <!--     </Border> -->
+                    <!-- </Popup> -->
+                    <TextBlock
+                        Foreground="#9198A1"
+                        FontSize="16"
+                        LineHeight="23"
+                        FontWeight="Bold"
+                        Margin="20,2,20,0"
+                        Name="BTC_Copy_Text">Copy Address</TextBlock>
+                    <!-- <Viewbox Width="20" Height="20"> -->
+                    <!--     <Path Name="CopyIconPath" Fill="#9198A1" Data="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"> -->
+                    <!--         <Path.RenderTransform> -->
+                    <!--             <ScaleTransform ScaleX="1" ScaleY="1"/> -->
+                    <!--         </Path.RenderTransform> -->
+                    <!--     </Path> -->
+                    <!-- </Viewbox> -->
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <Image Source="Images/btc.jpg"></Image>
+        </StackPanel>
+    </Grid>
+</Page>
