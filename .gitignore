@@ -1,0 +1,11 @@
+.vs/
+*.user
+*.suo
+*.cache
+*.log
+bin/
+obj/
+appsettings.json
+appsettings.*.json
+JWTConfig.json
+Files/

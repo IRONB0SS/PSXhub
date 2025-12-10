@@ -1,0 +1,332 @@
+﻿<pu:WindowX x:Class="PSXhub.NetworkSharing.WPF.MainWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:PSXhub.NetworkSharing.WPF"
+            xmlns:loc="clr-namespace:PSXhub.Localization;assembly=PSXhub.Localization"
+            mc:Ignorable="d"
+            xmlns:pu="https://opensource.panuon.com/wpf-ui"
+            Title="{loc:Loc NetworkSharing}"
+            Background="#0d1017"
+            Foreground="White"
+            WindowStartupLocation="CenterScreen"
+            ResizeMode="NoResize"
+            Height="220"
+            Width="360"
+            Closed="MainWindow_OnClosed"
+            FontFamily="{Binding FontFamily, Mode=OneWay}">
+    <Grid
+        FlowDirection="{Binding FlowDirection}">
+        <Grid.Background>
+            <RadialGradientBrush>
+                <RadialGradientBrush.GradientStops>
+                    <GradientStop Color="#1a1d27" Offset="0" />
+                    <GradientStop Color="#0d1017" Offset="1" />
+                </RadialGradientBrush.GradientStops>
+            </RadialGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.Row="0"
+            Margin="0,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid
+                Grid.Column="0"
+                Margin="5,0,5,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="7*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Foreground="#c9d1d9"
+                        FontSize="14"
+                        Background="Transparent"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="{loc:Loc NS1}"/>
+                    <ComboBox
+                        Grid.Column="1"
+                        Height="30"
+                        Margin="10,0,0,0"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                        Background="#222931"
+                        Foreground="#e1e8ed"
+                        FontSize="14"
+                        BorderThickness="0"
+                        pu:ComboBoxHelper.CornerRadius="5"
+                        pu:ComboBoxHelper.ItemsSelectedBackground="#99c8ff"
+                        pu:ComboBoxHelper.ItemsSelectedForeground="#3b3b3b"
+                        pu:ComboBoxHelper.ItemsHoverBackground="#99c8ff"
+                        pu:ComboBoxHelper.ItemsHoverForeground="#3b3b3b"
+                        pu:DropDownHelper.ShadowColor="{x:Null}"
+                        FlowDirection="LeftToRight"
+                        IsEnabled="{Binding ComboBoxesActivity}"
+                        ItemsSource="{Binding EthernetAdapterView}"
+                        DisplayMemberPath="DisplayName"
+                        SelectedItem="{Binding EthernetAdapter}"/>
+                </Grid>
+                <Grid
+                    Grid.Row="1"
+                    Margin="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="7*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Foreground="#c9d1d9"
+                        FontSize="14"
+                        Background="Transparent"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Content="{loc:Loc NS2}"/>
+                    <ComboBox
+                        Grid.Column="1"
+                        HorizontalContentAlignment="Stretch"
+                        Height="30"
+                        Margin="10,0,0,0"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                        Background="#222931"
+                        Foreground="#e1e8ed"
+                        FontSize="14"
+                        BorderThickness="0"
+                        pu:ComboBoxHelper.CornerRadius="5"
+                        pu:ComboBoxHelper.ItemsSelectedBackground="#99c8ff"
+                        pu:ComboBoxHelper.ItemsSelectedForeground="#3b3b3b"
+                        pu:ComboBoxHelper.ItemsHoverBackground="#99c8ff"
+                        pu:ComboBoxHelper.ItemsHoverForeground="#3b3b3b"
+                        FlowDirection="LeftToRight"
+                        IsEnabled="{Binding ComboBoxesActivity}"
+                        pu:DropDownHelper.ShadowColor="{x:Null}"
+                        ItemsSource="{Binding PSXAdapterView}"
+                        DisplayMemberPath="DisplayName"
+                        SelectedItem="{Binding PSXAdapter}"/>
+                </Grid>
+            </Grid>
+
+            <Button
+                Grid.Column="1"
+                Margin="5,5,0,10"
+                Height="70"
+                Background="#222931"
+                Foreground="#FFFFFF"
+                Cursor="Hand"
+                FontSize="12"
+                BorderThickness="0"
+                HorizontalContentAlignment="Center"
+                HorizontalAlignment="Stretch"
+                pu:ButtonHelper.CornerRadius="5"
+                pu:ButtonHelper.HoverBackground="#252c34"
+                Content="{loc:Loc NS3}"
+                Command="{Binding OpenNetworkConnectionsCommand}"/>
+        </Grid>
+
+        <Grid
+            Grid.Row="1"
+            Margin="5,5,10,0"
+            Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="18*"></ColumnDefinition>
+                <ColumnDefinition Width="82*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0"
+                Foreground="#c9d1d9"
+                FontSize="14"
+                Background="Transparent"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content="{loc:Loc NS4}"/>
+            <Grid
+                Grid.Column="1">
+                <Button
+                    HorizontalContentAlignment="Center"
+                    HorizontalAlignment="Stretch"
+                    Height="30"
+                    Margin="15,0,0,0"
+                    VerticalAlignment="Center"
+                    Background="#238636"
+                    Foreground="#FFFFFF"
+                    pu:ToolTipHelper.Background="#3c444d"
+                    pu:ToolTipHelper.BorderThickness="0"
+                    pu:ToolTipHelper.BorderBrush="#634711"
+                    pu:ToolTipHelper.Foreground="#e1e8ed"
+                    pu:ToolTipHelper.Padding="10,7"
+                    pu:ToolTipHelper.ShadowColor="#3c444d"
+                    pu:ToolTipHelper.CornerRadius="8"
+                    ToolTipService.ShowOnDisabled="True"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Cursor="Hand"
+                    pu:ButtonHelper.HoverBackground="#29903b"
+                    pu:ButtonHelper.CornerRadius="4"
+                    Visibility="{Binding StartButtonVisibility}"
+                    IsEnabled="{Binding IsEnabledStartButton}"
+                    Command="{Binding StartCommand}">
+                    <StackPanel>
+                        <Canvas
+                            Width="24"
+                            Height="24"
+                            Visibility="{Binding LoadingStartButtonVisibility}">
+                            <Path Fill="Black" Opacity="0.25" Data="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
+                            <Path Fill="Black">
+                                <Path.RenderTransform>
+                                    <RotateTransform Angle="0" CenterX="12" CenterY="12"/>
+                                </Path.RenderTransform>
+                                <Path.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard RepeatBehavior="Forever">
+                                                <DoubleAnimation Storyboard.TargetProperty="(Path.RenderTransform).Angle" From="0" To="360" Duration="0:0:0.75"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Path.Triggers>
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <Geometry>M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z</Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        </Canvas>
+                        <TextBlock
+                            Text="{loc:Loc Start}"
+                            Visibility="{Binding TextStartButtonVisibility}"/>
+                    </StackPanel>
+                </Button>
+                <Button
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    Height="30"
+                    Margin="15,0,0,0"
+                    VerticalAlignment="Center"
+                    Background="#222931"
+                    Foreground="#fa5e55"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    BorderBrush="Transparent"
+                    Cursor="Hand"
+                    pu:ButtonHelper.HoverBackground="#252c34"
+                    pu:ButtonHelper.CornerRadius="4"
+                    Visibility="{Binding StopButtonVisibility}"
+                    Command="{Binding StopCommand}">
+                    <StackPanel>
+                        <Canvas
+                            Width="24"
+                            Height="24"
+                            Visibility="{Binding LoadingStopButtonVisibility}">
+                            <Path Fill="Black" Opacity="0.25" Data="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
+                            <Path Fill="Black">
+                                <Path.RenderTransform>
+                                    <RotateTransform Angle="0" CenterX="12" CenterY="12"/>
+                                </Path.RenderTransform>
+                                <Path.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard RepeatBehavior="Forever">
+                                                <DoubleAnimation Storyboard.TargetProperty="(Path.RenderTransform).Angle" From="0" To="360" Duration="0:0:0.75"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Path.Triggers>
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <Geometry>M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z</Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        </Canvas>
+                        <TextBlock
+                            Text="{loc:Loc Stop}"
+                            Visibility="{Binding TextStopButtonVisibility}"/>
+                    </StackPanel>
+                </Button>
+                <Border
+                    HorizontalAlignment="Right"
+                    Visibility="{Binding StartButtonVisibility}">
+                    <Button
+                        Background="Transparent"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Margin="0,0,5,0"
+                        Cursor="Help"
+                        pu:ToolTipHelper.BorderThickness="0"
+                        pu:ToolTipHelper.Background="#3c444d"
+                        pu:ToolTipHelper.Foreground="#e1e8ed"
+                        pu:ToolTipHelper.Padding="10,7"
+                        pu:ToolTipHelper.ShadowColor="#3c444d"
+                        pu:ToolTipHelper.CornerRadius="4"
+                        ToolTipService.InitialShowDelay="500"
+                        ToolTipService.BetweenShowDelay="0"
+                        ToolTipService.ShowDuration="100000"
+                        ToolTipService.Placement="Bottom"
+                        ToolTipService.VerticalOffset="0"
+                        ToolTipService.HorizontalOffset="-100"
+                        Opacity="{Binding WarningOpacity}">
+                        <Button.ToolTip>
+                            <TextBlock
+                                FontSize="12"
+                                Foreground="#e1e8ed"
+                                MaxWidth="300"
+                                TextWrapping="WrapWithOverflow"
+                                FontFamily="{Binding FontFamily, Mode=OneWay}"
+                                Text="{loc:Loc NS5}"/>
+                        </Button.ToolTip>
+                        <Viewbox Width="18" Height="18"
+                                 Margin="0">
+                            <Path
+                                Fill="#fff"
+                                Data="M6.457 1.04699C7.116 -0.18701 8.884 -0.18701 9.543 1.04699L15.625 12.425C15.7675 12.6916 15.8385 12.9906 15.8311 13.2928C15.8237 13.595 15.7382 13.8902 15.5828 14.1495C15.4274 14.4088 15.2075 14.6235 14.9445 14.7725C14.6815 14.9216 14.3843 14.9999 14.082 15H1.918C1.61569 14.9999 1.31855 14.9216 1.05553 14.7725C0.792517 14.6235 0.572599 14.4088 0.417208 14.1495C0.261818 13.8902 0.176256 13.595 0.168859 13.2928C0.161462 12.9906 0.232484 12.6916 0.375003 12.425L6.457 1.04699ZM8 4.99999C7.80109 4.99999 7.61032 5.07901 7.46967 5.21966C7.32902 5.36031 7.25 5.55108 7.25 5.74999V8.24999C7.25 8.4489 7.32902 8.63967 7.46967 8.78032C7.61032 8.92097 7.80109 8.99999 8 8.99999C8.19892 8.99999 8.38968 8.92097 8.53033 8.78032C8.67098 8.63967 8.75 8.4489 8.75 8.24999V5.74999C8.75 5.55108 8.67098 5.36031 8.53033 5.21966C8.38968 5.07901 8.19892 4.99999 8 4.99999ZM9 11C9 10.7348 8.89465 10.4804 8.70711 10.2929C8.51957 10.1053 8.26522 9.99999 8 9.99999C7.73479 9.99999 7.48043 10.1053 7.2929 10.2929C7.10536 10.4804 7 10.7348 7 11C7 11.2652 7.10536 11.5196 7.2929 11.7071C7.48043 11.8946 7.73479 12 8 12C8.26522 12 8.51957 11.8946 8.70711 11.7071C8.89465 11.5196 9 11.2652 9 11Z">
+                                <Path.RenderTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Viewbox>
+                    </Button>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid
+            Grid.Row="2"
+            HorizontalAlignment="Right">
+            <Button
+                Margin="10,0"
+                Width="100"
+                Height="30"
+                Background="#222931"
+                Foreground="#FFFFFF"
+                FontSize="14"
+                BorderThickness="0"
+                Cursor="Hand"
+                pu:ButtonHelper.CornerRadius="5"
+                pu:ButtonHelper.HoverBackground="#252c34"
+                Content="{loc:Loc Ok}"
+                Command="{Binding ShutDownCommand}"/>
+        </Grid>
+    </Grid>
+</pu:WindowX>

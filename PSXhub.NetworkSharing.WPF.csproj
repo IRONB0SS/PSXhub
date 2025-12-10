@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>D:\PSXhub\PSXhub\References\app.manifest</ApplicationManifest>
+    <ApplicationIcon>PSX.ico</ApplicationIcon>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<COMReference Include="ActiveDs">
+			<WrapperTool>tlbimp</WrapperTool>
+			<VersionMinor>0</VersionMinor>
+			<VersionMajor>1</VersionMajor>
+			<Guid>97d25db0-0363-11cf-abc4-02608c9e7553</Guid>
+			<Lcid>0</Lcid>
+			<Isolated>false</Isolated>
+			<EmbedInteropTypes>true</EmbedInteropTypes>
+		</COMReference>
+		<COMReference Include="SHDocVw">
+			<WrapperTool>tlbimp</WrapperTool>
+			<VersionMinor>1</VersionMinor>
+			<VersionMajor>1</VersionMajor>
+			<Guid>eab22ac0-30c1-11cf-a7eb-0000c05bae0b</Guid>
+			<Lcid>0</Lcid>
+			<Isolated>false</Isolated>
+			<EmbedInteropTypes>true</EmbedInteropTypes>
+		</COMReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="PSX.ico" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Panuon.WPF.UI" Version="1.3.0.2" />
+    <PackageReference Include="System.Management" Version="9.0.8" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="9.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PSXhub.Application\PSXhub.Application.csproj" />
+    <ProjectReference Include="..\PSXhub.Localization\PSXhub.Localization.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helper\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ICS">
+      <HintPath>..\References\ICS\ICS.dll</HintPath>
+    </Reference>
+    <Reference Include="ICS.Manager">
+      <HintPath>..\References\ICS\ICS.Manager.dll</HintPath>
+    </Reference>
+	  <Reference Include="Interop.NETCONLib">
+		  <HintPath>..\References\ICS\Interop.NETCONLib.dll</HintPath>
+	  </Reference>
+  </ItemGroup>
+
+</Project>
